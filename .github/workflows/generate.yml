@@ -1,0 +1,74 @@
+name: Update Formula
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: 'Project name in configurations directory'
+        required: true
+        type: string
+
+  repository_dispatch:
+    types: [update_formula]
+
+permissions:
+  contents: write
+
+jobs:
+  update_formula:
+    runs-on: ubuntu-24.04
+
+    env:
+      PROJECT_NAME: ${{ github.event.inputs.project_name || github.event.client_payload.project_name }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Create virtual environment
+        run: python -m venv scripts/.venv
+
+      - name: Install dependencies
+        run: |
+          source scripts/.venv/bin/activate
+          pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Update formula
+        run: |
+          source scripts/.venv/bin/activate
+          python scripts/update_formula.py "${{ env.PROJECT_NAME }}"
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Generate commit message
+        id: generate_commit_message
+        env:
+            PROJECT_NAME: ${{ env.PROJECT_NAME }}
+        run: |
+            today=$(date +"%Y-%m-%d %H:%M:%S")
+            MESSAGE="chore: update ${PROJECT_NAME} formula @ ${today}"
+            echo "Commit message: ${MESSAGE}"
+            echo "message=${MESSAGE}" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        id: commit_changes
+        uses: pirafrank/github-commit-sign@v0
+        if: steps.git-check.outputs.has_changes == 'true'
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+            args: "commit --owner=${{ github.repository_owner }} --repo=${{ github.event.repository.name }} --branch=${{ github.ref_name }} --commitMessage='${{ steps.generate_commit_message.outputs.message }}' --changed Formula/${{ env.PROJECT_NAME }}.rb"
+
+      - name: Print commit URL
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+            echo "${{ steps.commit_changes.outputs.commitUrl }}"

@@ -1,0 +1,3 @@
+requests>=2.32
+minijinja>=2.15
+PyYAML>=6.0

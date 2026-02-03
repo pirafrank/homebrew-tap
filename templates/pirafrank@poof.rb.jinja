@@ -1,0 +1,43 @@
+class Poof < Formula
+  desc "Magic manager of pre-built software. Install and manage awesome tools from GitHub Releases in one command."
+  homepage "https://github.com/pirafrank/poof"
+  license "MIT"
+  version "{{ version }}"
+
+  on_macos do
+    on_intel do
+      url "{{ macos_intel_url }}"
+      sha256 "{{ macos_intel_sha256 }}"
+    end
+    on_arm do
+      url "{{ macos_arm_url }}"
+      sha256 "{{ macos_arm_sha256 }}"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      url "{{ linux_intel_url }}"
+      sha256 "{{ linux_intel_sha256 }}"
+    end
+    on_arm do
+      url "{{ linux_arm_url }}"
+      sha256 "{{ linux_arm_sha256 }}"
+    end
+  end
+
+  def install
+    # This assumes your tarball extracts directly to a binary named "poof"
+    # If it's inside a folder, you might need to adjust the path, e.g. bin.install "folder/poof"
+    bin.install "poof"
+  end
+
+  def post_install
+    # Ensure the binary is executable
+    chmod 0755, "#{bin}/poof"
+  end
+
+  test do
+    system "#{bin}/poof", "--version"
+  end
+end
