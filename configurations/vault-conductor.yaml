@@ -1,0 +1,9 @@
+github_repo: "pirafrank/vault-conductor"
+template_path: "templates/pirafrank@vault-conductor.rb.jinja"
+output_path: "Formula/vault-conductor.rb"
+
+asset_patterns:
+  macos_intel: "{NAME}-{VERSION}-x86_64-apple-darwin.tar.gz"
+  macos_arm: "{NAME}-{VERSION}-aarch64-apple-darwin.tar.gz"
+  linux_intel: "{NAME}-{VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+  linux_arm: "{NAME}-{VERSION}-aarch64-unknown-linux-gnu.tar.gz"
