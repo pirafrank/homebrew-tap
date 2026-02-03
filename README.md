@@ -1,4 +1,6 @@
-# pirafrank's Homebrew Tap
+# 🍺 pirafrank's Homebrew Tap
+
+[![Update Formula](https://github.com/pirafrank/homebrew-tap/actions/workflows/generate.yml/badge.svg?branch=main)](https://github.com/pirafrank/homebrew-tap/actions/workflows/generate.yml)
 
 Homebrew tap of my CLI tools.
 
