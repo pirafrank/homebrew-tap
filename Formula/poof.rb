@@ -2,27 +2,27 @@ class Poof < Formula
   desc "Magic manager of pre-built software. Install and manage awesome tools from GitHub Releases in one command."
   homepage "https://github.com/pirafrank/poof"
   license "MIT"
-  version "0.5.2"
+  version "0.6.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/pirafrank/poof/releases/download/v0.5.2/poof-0.5.2-x86_64-apple-darwin.tar.gz"
-      sha256 "4e9c5de311168899d5030e5b62c69408ed58687f9455b1e00c289c9c31cb8306"
+      url "https://github.com/pirafrank/poof/releases/download/v0.6.0/poof-0.6.0-x86_64-apple-darwin.tar.gz"
+      sha256 "0dfbc184cd9c0d60ac9649b00e0deeca9b55754a19573a4c5015f0fc9a7212ed"
     end
     on_arm do
-      url "https://github.com/pirafrank/poof/releases/download/v0.5.2/poof-0.5.2-aarch64-apple-darwin.tar.gz"
-      sha256 "5d69ca8573461f430db0f3879b313073540d2bf984f88abecd37b6107597ea2b"
+      url "https://github.com/pirafrank/poof/releases/download/v0.6.0/poof-0.6.0-aarch64-apple-darwin.tar.gz"
+      sha256 "546ca6c6940d3120554d31a1c6cd6754f7f0ad5f0a338bba266abcb35bf89d89"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pirafrank/poof/releases/download/v0.5.2/poof-0.5.2-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c2d0ead715873506121726a021d5d09429c6f28b7879e999789cf04fce93d6e4"
+      url "https://github.com/pirafrank/poof/releases/download/v0.6.0/poof-0.6.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "11ba94a2a6e879f1b531efacb10f6519192a46b77cd01f81898d6793d76231a2"
     end
     on_arm do
-      url "https://github.com/pirafrank/poof/releases/download/v0.5.2/poof-0.5.2-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "798a9138fc90c037c63b0bdb47a1fad8ed8e12bde81dccc2198ee1b8cb2e8e9c"
+      url "https://github.com/pirafrank/poof/releases/download/v0.6.0/poof-0.6.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "813f0f4444e632782b7c36bcc7b2f3e69d7eb73dbfd191407ec3e44570f4dc97"
     end
   end
 
