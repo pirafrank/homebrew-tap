@@ -4,6 +4,12 @@
 
 Homebrew tap of my CLI tools.
 
+## Available Tools
+
+- [vault-conductor](https://github.com/pirafrank/vault-conductor) - An SSH Agent that provides SSH keys stored in Bitwarden Secret Manager
+- [poof](https://github.com/pirafrank/poof) - Magic manager of pre-built software. Install and manage awesome tools from GitHub Releases in one command. No manifests, formulae, ports, or repositories required
+- [exif_renamer](https://github.com/pirafrank/rust_exif_renamer) - Fast, parallel tool to rename photos in a given directory to their EXIF DateTimeOriginal or viceversa
+
 ## Install
 
 How to get software provided by this tap.
