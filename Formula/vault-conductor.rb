@@ -2,27 +2,27 @@ class VaultConductor < Formula
   desc "An SSH Agent that provides SSH keys stored in Bitwarden Secret Manager."
   homepage "https://github.com/pirafrank/vault-conductor"
   license "MIT"
-  version "0.2.1"
+  version "0.3.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/pirafrank/vault-conductor/releases/download/v0.2.1/vault-conductor-0.2.1-x86_64-apple-darwin.tar.gz"
-      sha256 "8640599789486258551491cbc2a3b6ab316be868166b69fde242ec5beddfab48"
+      url "https://github.com/pirafrank/vault-conductor/releases/download/v0.3.0/vault-conductor-0.3.0-x86_64-apple-darwin.tar.gz"
+      sha256 "3b62ef38469f13287c0ca07ff85c767004ea6064cd847c00f83034bc8af76551"
     end
     on_arm do
-      url "https://github.com/pirafrank/vault-conductor/releases/download/v0.2.1/vault-conductor-0.2.1-aarch64-apple-darwin.tar.gz"
-      sha256 "0dc4c75689d075dec819f80d448e82b1dd8ea78236e785811596c259c61b0e60"
+      url "https://github.com/pirafrank/vault-conductor/releases/download/v0.3.0/vault-conductor-0.3.0-aarch64-apple-darwin.tar.gz"
+      sha256 "40179e38f110bba588d5ee198e3d5a1a6c4ba09ad0a8d33309851103c6cb0fc1"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pirafrank/vault-conductor/releases/download/v0.2.1/vault-conductor-0.2.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d4a17737d67498903dd195ed302c3ce2f8176771f7be05c9ad885255a8d5e45c"
+      url "https://github.com/pirafrank/vault-conductor/releases/download/v0.3.0/vault-conductor-0.3.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "cea7b7d13f8d53d1c834751184c4c7e16499f0b64b7a887352055ca21c51a2ae"
     end
     on_arm do
-      url "https://github.com/pirafrank/vault-conductor/releases/download/v0.2.1/vault-conductor-0.2.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "f0ac7394c6f6c8a17ec27d0622e321aa7c57988e15e8711198a54fdc5049310d"
+      url "https://github.com/pirafrank/vault-conductor/releases/download/v0.3.0/vault-conductor-0.3.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "1b7f368911847da089c165359a5e1df5a486bfb2c4893c6023d5a6ae803b1b22"
     end
   end
 
