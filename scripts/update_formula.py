@@ -193,6 +193,7 @@ def main():
     rendered = env.render_str(template_content, **template_vars)
 
     # Write output
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(rendered)
     print(f"Successfully updated {output_path}")
     print(f"\nFormula updated to version {version}")
