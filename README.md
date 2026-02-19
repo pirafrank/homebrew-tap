@@ -80,3 +80,23 @@ python scripts/update_formula.py <project_name>
 - Webhook: Send `repository_dispatch` event with `project_name` in payload
 
 Changes are automatically committed using [github-commit-sign](https://github.com/marketplace/actions/github-commit-sign) action.
+
+## Fork it
+
+Fork and use it for your own brewing!
+
+Clean the `configurations/` and `Formula` directories first. Then, adding a Formula is as easy as:
+
+1. Write configuration in `configurations/` directory
+2. Create a Jinja template for it in `templates/` directory
+3. Commit and push changes!
+
+Done!
+
+## Brother project
+
+- [💫 AURA - Arch User Repository Automation](https://github.com/pirafrank/aura), AUR repositories for my CLI tools
+
+## License
+
+MIT
