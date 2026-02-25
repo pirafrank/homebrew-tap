@@ -32,11 +32,6 @@ class VaultConductor < Formula
     bin.install "vault-conductor"
   end
 
-  def post_install
-    # Ensure the binary is executable
-    chmod 0755, "#{bin}/vault-conductor"
-  end
-
   test do
     system "#{bin}/vault-conductor", "--version"
   end

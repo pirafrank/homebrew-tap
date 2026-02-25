@@ -32,11 +32,6 @@ class ExifRenamer < Formula
     bin.install "exif_renamer"
   end
 
-  def post_install
-    # Ensure the binary is executable
-    chmod 0755, "#{bin}/exif_renamer"
-  end
-
   test do
     system "#{bin}/exif_renamer", "--version"
   end
