@@ -32,11 +32,6 @@ class Poof < Formula
     bin.install "poof"
   end
 
-  def post_install
-    # Ensure the binary is executable
-    chmod 0755, "#{bin}/poof"
-  end
-
   test do
     system "#{bin}/poof", "--version"
   end
