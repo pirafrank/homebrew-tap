@@ -8,6 +8,7 @@ Homebrew formula template.
 """
 
 import argparse
+import os
 import sys
 from pathlib import Path
 from typing import Dict, Optional
@@ -74,8 +75,13 @@ def fetch_latest_release(github_repo: str) -> Dict:
     url = f"https://api.github.com/repos/{github_repo}/releases/latest"
     print(f"Fetching latest release from {url}...")
 
+    headers = {"Accept": "application/vnd.github+json"}
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
     try:
-        response = requests.get(url, timeout=30)
+        response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:

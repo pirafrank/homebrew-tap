@@ -40,6 +40,8 @@ jobs:
           pip install -r scripts/requirements.txt
 
       - name: Update formula
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           source scripts/.venv/bin/activate
           python scripts/update_formula.py "${{ env.PROJECT_NAME }}"
